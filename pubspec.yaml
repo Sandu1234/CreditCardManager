@@ -56,6 +56,8 @@ flutter:
   assets:
     - assets/images/credit.png
     - assets/images/credit-card-one.png
+    - assets/images/credit-card-two.png
+    - assets/images/credit-card-three.png
     - assets/images/user.png
     - assets/images/commercial_bank.png
     - assets/images/peoples_bank.png

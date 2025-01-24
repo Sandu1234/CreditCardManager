@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:credit_card_manager/screens/background.dart'; // Import GradientBackground
 
 class OnboardingPage1 extends StatelessWidget {
   const OnboardingPage1({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Color(0xFF4A148C), // Purple background
-      body: Padding(
+    return GradientBackground(
+      child: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -28,11 +28,10 @@ class OnboardingPage1 extends StatelessWidget {
                 fontSize: 20,
                 fontWeight: FontWeight.bold,
                 color: Colors.white,
+                decoration: TextDecoration.none, // Ensure no underline
               ),
             ),
             const SizedBox(height: 24),
-
-            // New Section Added Here
             const Text(
               'Simplify your financial life by organizing all your credit cards in one easy-to-use app. '
               'Track balances, due dates, and payments effortlessly.',
@@ -40,8 +39,10 @@ class OnboardingPage1 extends StatelessWidget {
               style: TextStyle(
                 fontSize: 16,
                 color: Colors.white70,
+                decoration: TextDecoration.none, // Ensure no underline
               ),
             ),
+
             const SizedBox(height: 38),
 
             // Indicator Dots

@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:credit_card_manager/screens/background.dart'; // Import GradientBackground
 
 class OnboardingPage4 extends StatelessWidget {
   const OnboardingPage4({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Color(0xFF4A148C), // Purple background
-      body: Padding(
+    return GradientBackground(
+      child: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -16,7 +16,7 @@ class OnboardingPage4 extends StatelessWidget {
             const Spacer(),
             Center(
               child: Image.asset(
-                'assets/images/credit-card3.png', // Replace with your actual image path
+                'assets/images/credit-card-three.png', // Replace with your actual image path
                 height: 200,
               ),
             ),
@@ -28,18 +28,18 @@ class OnboardingPage4 extends StatelessWidget {
                 fontSize: 20,
                 fontWeight: FontWeight.bold,
                 color: Colors.white,
+                decoration: TextDecoration.none, // Prevent underline
               ),
             ),
             const SizedBox(height: 24),
-
-            // New Section Added Here
             const Text(
-              'Your data is encrypted and protected.'
+              'Your data is encrypted and protected. '
               'Manage your finances with confidence and security, anytime, anywhere.',
               textAlign: TextAlign.center,
               style: TextStyle(
                 fontSize: 16,
                 color: Colors.white70,
+                decoration: TextDecoration.none, // Prevent underline
               ),
             ),
             const SizedBox(height: 38),
@@ -50,16 +50,16 @@ class OnboardingPage4 extends StatelessWidget {
               children: [
                 CircleAvatar(radius: 6, backgroundColor: Colors.white),
                 SizedBox(width: 8),
-                CircleAvatar(radius: 6, backgroundColor: Colors.white38),
+                CircleAvatar(radius: 6, backgroundColor: Colors.white),
                 SizedBox(width: 8),
-                CircleAvatar(radius: 6, backgroundColor: Colors.white38),
+                CircleAvatar(radius: 6, backgroundColor: Colors.white),
                 SizedBox(width: 8),
-                CircleAvatar(radius: 6, backgroundColor: Colors.white38),
+                CircleAvatar(radius: 6, backgroundColor: Colors.white),
               ],
             ),
             const Spacer(),
 
-            // Optional button section
+            // Finish or Next Button
             ElevatedButton(
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.white,
@@ -69,11 +69,11 @@ class OnboardingPage4 extends StatelessWidget {
                 ),
               ),
               onPressed: () {
-                Navigator.pushNamed(context, '/onboarding3');
+                Navigator.pushNamed(context, '/home'); // Navigate to Home Page
               },
               child: const Padding(
                 padding: EdgeInsets.symmetric(horizontal: 32, vertical: 12),
-                child: Text('Next', style: TextStyle(fontSize: 16)),
+                child: Text('Finish', style: TextStyle(fontSize: 16)),
               ),
             ),
             const SizedBox(height: 16),

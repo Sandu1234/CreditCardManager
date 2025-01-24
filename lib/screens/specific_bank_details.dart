@@ -1,58 +1,60 @@
 import 'package:flutter/material.dart';
+import 'package:credit_card_manager/screens/background.dart'; // Import GradientBackground
 
 class SpecificBankDetails extends StatelessWidget {
   const SpecificBankDetails({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Color(0xFF4A148C), // Background color
-      appBar: AppBar(
-        backgroundColor: Colors.transparent,
-        elevation: 0,
-        actions: [
-          IconButton(
-            onPressed: () {},
-            icon: Icon(Icons.add, color: Colors.white),
-          ),
-          IconButton(
-            onPressed: () {},
-            icon: Icon(Icons.notifications_outlined, color: Colors.white),
-          ),
-          IconButton(
-            onPressed: () {},
-            icon: Icon(Icons.search, color: Colors.white),
-          ),
-          CircleAvatar(
-            backgroundImage:
-                AssetImage('assets/images/user.png'), // Profile image
-          ),
-          SizedBox(width: 8),
-        ],
-      ),
-      body: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16.0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              // Summary Card
-              _buildSummaryCard(),
+    return GradientBackground(
+      child: Scaffold(
+        backgroundColor: Colors.transparent, // Use GradientBackground
+        appBar: AppBar(
+          backgroundColor: Colors.transparent,
+          elevation: 0,
+          actions: [
+            IconButton(
+              onPressed: () {},
+              icon: const Icon(Icons.add, color: Colors.white),
+            ),
+            IconButton(
+              onPressed: () {},
+              icon:
+                  const Icon(Icons.notifications_outlined, color: Colors.white),
+            ),
+            IconButton(
+              onPressed: () {},
+              icon: const Icon(Icons.search, color: Colors.white),
+            ),
+            const CircleAvatar(
+              backgroundImage:
+                  AssetImage('assets/images/user.png'), // Profile image
+            ),
+            const SizedBox(width: 8),
+          ],
+        ),
+        body: SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                // Summary Card
+                _buildSummaryCard(),
+                const SizedBox(height: 24),
 
-              const SizedBox(height: 24),
+                // Total Payable Section
+                _buildTotalPayableSection(),
+                const SizedBox(height: 24),
 
-              // Total Payable Section
-              _buildTotalPayableSection(),
-
-              const SizedBox(height: 24),
-
-              // Transactions Section
-              _buildTransactionsSection(),
-            ],
+                // Transactions Section
+                _buildTransactionsSection(),
+              ],
+            ),
           ),
         ),
+        bottomNavigationBar: _buildBottomNavigationBar(),
       ),
-      bottomNavigationBar: _buildBottomNavigationBar(),
     );
   }
 
@@ -61,7 +63,7 @@ class SpecificBankDetails extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
-        color: Color(0xFF5E35B1),
+        color: const Color(0xFF270046), // Purple card color
         borderRadius: BorderRadius.circular(16),
       ),
       child: Row(
@@ -74,9 +76,9 @@ class SpecificBankDetails extends StatelessWidget {
                 height: 40,
               ),
               const SizedBox(width: 16),
-              Column(
+              const Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                children: const [
+                children: [
                   Text(
                     'TOTAL PAYMENT DUE',
                     style: TextStyle(color: Colors.white70, fontSize: 14),
@@ -291,10 +293,7 @@ class SpecificBankDetails extends StatelessWidget {
         trailing: Text(
           amount,
           style: const TextStyle(
-            color: Colors.white,
-            fontWeight: FontWeight.bold,
-            fontSize: 16,
-          ),
+              color: Colors.white, fontWeight: FontWeight.bold, fontSize: 16),
         ),
       ),
     );
@@ -303,7 +302,7 @@ class SpecificBankDetails extends StatelessWidget {
   // Bottom Navigation Bar
   Widget _buildBottomNavigationBar() {
     return BottomNavigationBar(
-      backgroundColor: const Color(0xFF4A148C),
+      backgroundColor: const Color(0xFF270046),
       selectedItemColor: Colors.white,
       unselectedItemColor: Colors.white70,
       items: const [
