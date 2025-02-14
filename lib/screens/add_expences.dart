@@ -27,15 +27,15 @@ class AddExpensesPage extends StatelessWidget {
                         child:
                             const Icon(Icons.arrow_back, color: Colors.white),
                       ),
-                      Row(
+                      const Row(
                         children: [
-                          const Icon(Icons.add, color: Colors.white),
-                          const SizedBox(width: 16),
-                          const Icon(Icons.notifications, color: Colors.white),
-                          const SizedBox(width: 16),
-                          const Icon(Icons.search, color: Colors.white),
-                          const SizedBox(width: 16),
-                          const CircleAvatar(
+                          Icon(Icons.add, color: Colors.white),
+                          SizedBox(width: 16),
+                          Icon(Icons.notifications, color: Colors.white),
+                          SizedBox(width: 16),
+                          Icon(Icons.search, color: Colors.white),
+                          SizedBox(width: 16),
+                          CircleAvatar(
                             backgroundImage: AssetImage(
                                 "assets/images/user.png"), // Replace with your asset
                             radius: 15,

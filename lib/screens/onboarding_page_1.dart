@@ -13,6 +13,33 @@ class OnboardingPage1 extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
+            // Add a Row at the top for the Skip button
+            Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                TextButton(
+                  onPressed: () {
+                    // Navigate to the home page
+                    Navigator.pushNamed(context, '/home');
+                  },
+                  style: TextButton.styleFrom(
+                    foregroundColor: Colors.white,
+                    textStyle: const TextStyle(fontSize: 16),
+                  ),
+                  child: const Padding(
+                    padding: EdgeInsets.only(top: 50.0),
+                    child: Row(
+                      children: [
+                        Text('Skip'),
+                        SizedBox(width: 4),
+                        Icon(Icons.arrow_forward,
+                            size: 18, color: Colors.white),
+                      ],
+                    ),
+                  ),
+                ),
+              ],
+            ),
             const Spacer(),
             Center(
               child: Image.asset(
@@ -42,7 +69,6 @@ class OnboardingPage1 extends StatelessWidget {
                 decoration: TextDecoration.none, // Ensure no underline
               ),
             ),
-
             const SizedBox(height: 38),
 
             // Indicator Dots

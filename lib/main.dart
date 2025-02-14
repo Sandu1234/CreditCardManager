@@ -1,10 +1,12 @@
 import 'package:credit_card_manager/screens/add_expences.dart';
 import 'package:credit_card_manager/screens/add_new_credit_card.dart';
+import 'package:credit_card_manager/screens/login.dart';
 import 'package:credit_card_manager/screens/notifications.dart';
 import 'package:credit_card_manager/screens/onboarding_page_1.dart';
 import 'package:credit_card_manager/screens/onboarding_page_2.dart';
 import 'package:credit_card_manager/screens/onboarding_page_3.dart';
 import 'package:credit_card_manager/screens/onboarding_page_4.dart';
+import 'package:credit_card_manager/screens/signup.dart';
 import 'package:credit_card_manager/screens/specific_bank_details.dart';
 import 'package:credit_card_manager/screens/success.dart';
 import 'package:flutter/material.dart';
@@ -26,38 +28,40 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         useMaterial3: true,
       ),
-      initialRoute: '/AddExpenses', // Starting route
+      initialRoute: '/signup', // Starting route
       routes: {
-        '/onboarding1': (context) => GradientBackground(
+        '/onboarding1': (context) => const GradientBackground(
               child: OnboardingPage1(),
             ),
-        '/onboarding2': (context) => GradientBackground(
+        '/onboarding2': (context) => const GradientBackground(
               child: OnboardingPage2(),
             ),
-        '/onboarding3': (context) => GradientBackground(
+        '/onboarding3': (context) => const GradientBackground(
               child: OnboardingPage3(),
             ),
-        '/onboarding4': (context) => GradientBackground(
+        '/onboarding4': (context) => const GradientBackground(
               child: OnboardingPage4(),
             ),
-        '/home': (context) => GradientBackground(
+        '/home': (context) => const GradientBackground(
               child: HomePage(),
             ),
-        '/specificbankdetails': (context) => GradientBackground(
-              child: const SpecificBankDetails(),
+        '/specificbankdetails': (context) => const GradientBackground(
+              child: SpecificBankDetails(),
             ),
-        '/notifications': (context) => GradientBackground(
+        '/notifications': (context) => const GradientBackground(
               child: NotificationPage(),
             ),
-        '/success': (context) => GradientBackground(
+        '/success': (context) => const GradientBackground(
               child: SuccessPage(),
             ),
-        '/AddExpenses': (context) => GradientBackground(
+        '/AddExpenses': (context) => const GradientBackground(
               child: AddExpensesPage(),
             ),
-        '/addnewcreditcard': (context) => GradientBackground(
+        '/addnewcreditcard': (context) => const GradientBackground(
               child: AddCreditCardPage(),
             ),
+        '/login': (context) => const GradientBackground(child: LoginPage()),
+        '/signup': (context) => const GradientBackground(child: SignUpPage())
       },
     );
   }
