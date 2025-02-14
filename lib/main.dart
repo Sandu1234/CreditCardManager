@@ -9,11 +9,22 @@ import 'package:credit_card_manager/screens/onboarding_page_4.dart';
 import 'package:credit_card_manager/screens/signup.dart';
 import 'package:credit_card_manager/screens/specific_bank_details.dart';
 import 'package:credit_card_manager/screens/success.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:credit_card_manager/screens/background.dart';
 import 'package:credit_card_manager/screens/home_page.dart';
+import 'package:firebase_core/firebase_core.dart';
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  if (kIsWeb) {
+    await Firebase.initializeApp(
+        options: const FirebaseOptions(
+            apiKey: "AIzaSyD9o-Qy3sPa_JAM_WaUQ2EzGIhKtn-ujgY",
+            appId: "1:152369755703:web:81c8c0efa26ce94d0a31b2",
+            messagingSenderId: "152369755703",
+            projectId: "creditcardmanager-61acf"));
+  }
   runApp(const MyApp());
 }
 
